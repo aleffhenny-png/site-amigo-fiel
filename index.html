@@ -2,23 +2,141 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amigo Fiel - Início</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #fdfbf7; color: #4a4a4a; }
-        header { background: #ff6f61; color: white; padding: 25px; text-align: center; }
-        nav { background: #e05a4c; padding: 12px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-        .hero { max-width: 800px; margin: 50px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border-top: 5px solid #ff6f61; }
-        .btn { display: inline-block; background: #ff6f61; color: white; padding: 12px 25px; text-decoration: none; border-radius: 25px; margin-top: 20px; font-weight: bold; }
-        .btn:hover { background: #e05a4c; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff9f6;
+            color: #4a4a4a;
+        }
+        header {
+            background: linear-gradient(135deg, #ff6f61, #e05a4c);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        nav {
+            background: #d4483a;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            transition: opacity 0.2s;
+        }
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        .hero {
+            background: #fff5f3 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="%23ffdfdc"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') repeat;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid #ffdfdc;
+        }
+        .hero h2 {
+            color: #ff6f61;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #ff6f61;
+        }
+        .card h3 {
+            color: #ff6f61;
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .card p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #666;
+        }
+        .cta-section {
+            background: white;
+            border: 2px dashed #ff6f61;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .cta-section h2 {
+            color: #ff6f61;
+            margin-top: 0;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff6f61;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(255, 111, 97, 0.3);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #e05a4c;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #4a4a4a;
+            color: white;
+            margin-top: 60px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>🐾 Amigo Fiel</h1>
-        <p>Encontre seu novo melhor amigo</p>
+        <p>Conectando corações e encontrando lares cheios de amor</p>
     </header>
+
     <nav>
         <a href="index.html">Início</a>
         <a href="sobre.html">Sobre Nós</a>
@@ -26,10 +144,39 @@
         <a href="galeria.html">Galeria</a>
         <a href="contato.html">Contato</a>
     </nav>
+
     <div class="hero">
-        <h2>Transforme uma vida hoje mesmo!</h2>
-        <p>Milhares de animaizinhos esperam por um lar cheio de amor. Adotar é um ato de carinho e responsabilidade.</p>
-        <a href="pets.html" class="btn">Ver Pets Disponíveis</a>
+        <h2>Transforme uma vida com amor e responsabilidade</h2>
+        <p>O abandono de animais é um desafio constante, mas cada adoção representa uma nova chance de esperança, carinho e alegria para um pet que só quer um lar seguro.</p>
     </div>
+
+    <div class="container">
+        <div class="info-grid">
+            <div class="card">
+                <h3>❤️ Por que Adotar?</h3>
+                <p>Adotar é um ato de pura solidariedade. Ao invés de comprar, você resgata um animal que passou por dificuldades, dando a ele a oportunidade de viver com dignidade e receber amor verdadeiro.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Adoção Responsável</h3>
+                <p>Nossos animaizinhos são entregues vacinados, vermifugados e avaliados. Cuidamos de todo o processo para garantir que a adaptação na sua nova família seja perfeita e segura.</p>
+            </div>
+            <div class="card">
+                <h3>🏡 O Impacto na Família</h3>
+                <p>Ter um pet em casa traz benefícios comprovados para a saúde mental e física: reduzem o estresse, aumentam a alegria do dia a dia e ensinam valores importantes para todas as idades.</p>
+            </div>
+        </div>
+
+        <!-- Seção interativa perguntando para ver os pets -->
+        <div class="cta-section">
+            <h2>🐶 Já se apaixonou pela nossa causa?</h2>
+            <p style="font-size: 16px; color: #555; margin-bottom: 20px;">Temos vários cãezinhos e gatinhos esperando ansiosamente por uma família. Deseja conhecer os pets que estão disponíveis para adoção neste momento?</p>
+            <a href="pets.html" class="btn">✨ Sim, quero ver os pets disponíveis!</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Amigo Fiel - Projeto de Conscientização e Adoção de Pets.</p>
+    </footer>
+
 </body>
 </html>
