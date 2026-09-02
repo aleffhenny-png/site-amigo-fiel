@@ -2,22 +2,167 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amigo Fiel - Nossos Pets</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #fdfbf7; color: #4a4a4a; }
-        header { background: #ff6f61; color: white; padding: 25px; text-align: center; }
-        nav { background: #e05a4c; padding: 12px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-        .container { max-width: 800px; margin: 40px auto; }
-        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-left: 6px solid #ff6f61; }
-        .card h3 { margin-top: 0; color: #ff6f61; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff9f6;
+            color: #4a4a4a;
+        }
+        header {
+            background: linear-gradient(135deg, #ff6f61, #e05a4c);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        nav {
+            background: #d4483a;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .container h2 {
+            color: #ff6f61;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .container > p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .pets-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        /* Card Dinâmico */
+        .pet-card {
+            background: white;
+            border-radius: 12px;
+            width: 280px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 2px solid #ffdfdc;
+            transition: all 0.3s ease; /* Efeito suave */
+            cursor: pointer;
+            text-align: left;
+        }
+        .pet-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .pet-card h3 {
+            color: #ff6f61;
+            margin: 15px 0 5px 0;
+            font-size: 22px;
+        }
+        .pet-card .breve-info {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        /* Informações extras que se revelam ao passar o mouse */
+        .detalhes-extras {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+            border-top: 1px dashed #ffdfdc;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .detalhes-extras p {
+            font-size: 13px;
+            color: #555;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        .tag {
+            display: inline-block;
+            background: #fff5f3;
+            color: #ff6f61;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+        /* O Mágico Hover: Quando o mouse passa por cima do card */
+        .pet-card:hover {
+            transform: translateY(-8px); /* Sobe um pouco */
+            box-shadow: 0 12px 30px rgba(255, 111, 97, 0.2);
+            border-color: #ff6f61;
+        }
+        .pet-card:hover img {
+            transform: scale(1.03); /* Dá um zoom leve na foto */
+        }
+        .pet-card:hover .detalhes-extras {
+            max-height: 150px; /* Abre o espaço para mostrar o texto */
+            opacity: 1;
+            padding-top: 12px;
+            margin-top: 10px;
+        }
+        .btn-adotar {
+            display: block;
+            text-align: center;
+            background: #ff6f61;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+        .btn-adotar:hover {
+            background: #e05a4c;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #4a4a4a;
+            color: white;
+            margin-top: 60px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>🐾 Amigo Fiel</h1>
+        <p>Conheça nossos amiguinhos que buscam um lar</p>
     </header>
+
     <nav>
         <a href="index.html">Início</a>
         <a href="sobre.html">Sobre Nós</a>
@@ -25,20 +170,53 @@
         <a href="galeria.html">Galeria</a>
         <a href="contato.html">Contato</a>
     </nav>
+
     <div class="container">
-        <h2>Pets Prontos para Adoção</h2>
-        <div class="card">
-            <h3>🐶 Max (Cachorro)</h3>
-            <p><strong>Porte:</strong> Médio | <strong>Idade:</strong> 2 anos | <strong>Temperamento:</strong> Brincalhão e dócil.</p>
-        </div>
-        <div class="card">
-            <h3>🐱 Mel (Gata)</h3>
-            <p><strong>Porte:</strong> Pequeno | <strong>Idade:</strong> 1 ano | <strong>Temperamento:</strong> Carinhosa e calma.</p>
-        </div>
-        <div class="card">
-            <h3>🐶 Bob (Cachorro)</h3>
-            <p><strong>Porte:</strong> Grande | <strong>Idade:</strong> 3 anos | <strong>Temperamento:</strong> Protetor e enérgico.</p>
+        <h2>Nossos Pets Disponíveis</h2>
+        <p>Passe o mouse sobre os cards abaixo para descobrir mais informações sobre cada um deles!</p>
+
+        <div class="pets-grid">
+            <!-- Pet 1 -->
+            <div class="pet-card">
+                <img src="BOLA-DE-NEVE.JPG" alt="Bola de Neve">
+                <h3>Bola de Neve</h3>
+                <div class="breve-info">🐶 Cão • 2 anos • Porte Médio</div>
+                
+                <!-- Informações reveladas no Hover -->
+                <div class="detalhes-extras">
+                    <p><strong>Personalidade:</strong> Muito brincalhão, enérgico e adora correr.</p>
+                    <div>
+                        <span class="tag">Vacinado</span>
+                        <span class="tag">Castrado</span>
+                        <span class="tag">Dócil</span>
+                    </div>
+                </div>
+                <a href="contato.html" class="btn-adotar">Quero Adotar</a>
+            </div>
+
+            <!-- Pet 2 -->
+            <div class="pet-card">
+                <img src="FLOCOS.JPG" alt="Flocos">
+                <h3>Flocos</h3>
+                <div class="breve-info">🐱 Gato • 1 ano • Porte Pequeno</div>
+                
+                <!-- Informações reveladas no Hover -->
+                <div class="detalhes-extras">
+                    <p><strong>Personalidade:</strong> Carinhoso, calmo, adora tirar um cochilo no sol.</p>
+                    <div>
+                        <span class="tag">Vacinado</span>
+                        <span class="tag">Vermifugado</span>
+                        <span class="tag">Carinhoso</span>
+                    </div>
+                </div>
+                <a href="contato.html" class="btn-adotar">Quero Adotar</a>
+            </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Amigo Fiel - Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>
