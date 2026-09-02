@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Amigo Fiel - Galeria</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #fdfbf7; color: #4a4a4a; }
+        header { background: #ff6f61; color: white; padding: 25px; text-align: center; }
+        nav { background: #e05a4c; padding: 12px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 900px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border-top: 5px solid #ff6f61; }
+        .grid { display: flex; gap: 25px; justify-content: center; margin-top: 25px; flex-wrap: wrap; }
+        .card-foto { background: #fff5f3; border: 2px solid #ffdfdc; border-radius: 10px; padding: 15px; width: 280px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .card-foto img { width: 100%; height: 320px; object-fit: cover; border-radius: 8px; }
+        .card-foto h3 { margin: 12px 0 5px 0; color: #ff6f61; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🐾 Amigo Fiel</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="pets.html">Nossos Pets</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="container">
+        <h2>Galeria de Finais Felizes</h2>
+        <p>Conheça alguns dos nossos queridos pets que fazem parte da nossa história:</p>
+        
+        <div class="grid">
+            <!-- Foto 1: Bola de Neve -->
+            <div class="card-foto">
+                <img src="BOLA-DE-NEVE.JPG" alt="Bola de Neve">
+                <h3>Bola de Neve</h3>
+                <p>Resgatado e cheio de estilo!</p>
+            </div>
+
+            <!-- Foto 2: Flocos -->
+            <div class="card-foto">
+                <img src="FLOCOS.JPG" alt="Flocos">
+                <h3>Flocos</h3>
+                <p>Desfrutando de todo o conforto e carinho.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
